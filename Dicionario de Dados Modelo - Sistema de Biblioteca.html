@@ -1,0 +1,2018 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<style>
+      .table {
+        background-color:#F5F5FF;
+        border-left:4px solid gray;
+        border-bottom:4px solid gray;
+        border-top:4px solid gray;
+        border-right:4px solid gray;
+        margin-bottom:3em;
+        margin-left:2em;
+        margin-right:2em;
+        padding:1em;
+      }
+      .tableNameHeading h1 {
+          display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:125%;
+        font-weight:bold;
+      }
+        
+      .tableNameHeading h2 {
+        display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:115%;
+        font-weight:normal;
+      }
+      
+      .tableComment { 
+        background-color:#e4efff; margin-bottom:20px;
+      }
+      
+      .tableDefinition { 
+        padding:2px;
+        border-collapse:collapse;
+        margin-top:1em;
+      }
+
+      .tdTableDefinition {
+        padding-right:10px;
+        vertical-align:top;
+        border-top:1px solid #C0C0C0;
+      }
+
+      .tdLogicalColName {
+        width:20em;
+      }
+      
+      .tdPhysicalColName {
+        width:20em;
+      }
+      
+      .tdDataType {
+        width:10em;
+      }
+
+      .tdPkFlag {
+        width:4em;
+      }
+
+      .tdNullFlag {
+        width:9em;
+      }
+
+      .tdTableHeading {
+        padding:2px;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+        vertical-align:top;
+        border-bottom: 1px solid #C0C0C0;
+        background-color: rgb(240,240,240);
+      }
+      
+      .subTitle {
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      .references {
+      }
+      .comment {
+        color:#666666;
+        margin-left:3em;
+        padding:0.25em;
+      }
+    </style>
+<title>Modelo Entidade Relacionamento - Sistema de Biblioteca</title>
+</head>
+<body>
+<center>
+<h2>Modelo Entidade Relacionamento - Sistema de Biblioteca</h2>
+</center>
+<h3>List of tables</h3>
+<ul>
+<li>
+<a href="#Afiliacao">Afiliacao</a>
+</li>
+<li>
+<a href="#Aluno">Aluno</a>
+</li>
+<li>
+<a href="#Area_Conhecimento">Area_Conhecimento</a>
+</li>
+<li>
+<a href="#Area_Conhecimento_Livro">Area_Conhecimento_Livro</a>
+</li>
+<li>
+<a href="#Autor">Autor</a>
+</li>
+<li>
+<a href="#Autor_Livro">Autor_Livro</a>
+</li>
+<li>
+<a href="#Bairro">Bairro</a>
+</li>
+<li>
+<a href="#Cidade">Cidade</a>
+</li>
+<li>
+<a href="#Cor_Pele">Cor_Pele</a>
+</li>
+<li>
+<a href="#Dependente">Dependente</a>
+</li>
+<li>
+<a href="#Editora">Editora</a>
+</li>
+<li>
+<a href="#Email">Email</a>
+</li>
+<li>
+<a href="#Emprestimo">Emprestimo</a>
+</li>
+<li>
+<a href="#Endereco">Endereco</a>
+</li>
+<li>
+<a href="#Estado_Civil">Estado_Civil</a>
+</li>
+<li>
+<a href="#Funcionario">Funcionario</a>
+</li>
+<li>
+<a href="#Habilidade">Habilidade</a>
+</li>
+<li>
+<a href="#Habilidade_Funcionario">Habilidade_Funcionario</a>
+</li>
+<li>
+<a href="#Livro">Livro</a>
+</li>
+<li>
+<a href="#Livro_Emprestimo">Livro_Emprestimo</a>
+</li>
+<li>
+<a href="#Naturalidade">Naturalidade</a>
+</li>
+<li>
+<a href="#Pagamento">Pagamento</a>
+</li>
+<li>
+<a href="#Pais">Pais</a>
+</li>
+<li>
+<a href="#Professor">Professor</a>
+</li>
+<li>
+<a href="#Professor_Titulacao">Professor_Titulacao</a>
+</li>
+<li>
+<a href="#Reserva">Reserva</a>
+</li>
+<li>
+<a href="#Reserva_Livro">Reserva_Livro</a>
+</li>
+<li>
+<a href="#Sexo">Sexo</a>
+</li>
+<li>
+<a href="#Telefone">Telefone</a>
+</li>
+<li>
+<a href="#Tipo_Email">Tipo_Email</a>
+</li>
+<li>
+<a href="#Tipo_Endereco">Tipo_Endereco</a>
+</li>
+<li>
+<a href="#Tipo_Telefone">Tipo_Telefone</a>
+</li>
+<li>
+<a href="#Titulacao">Titulacao</a>
+</li>
+<li>
+<a href="#UF">UF</a>
+</li>
+</ul>
+<div class="tableNameHeading">
+<h1>Afiliacao<a name="Afiliacao"></a>
+</h1>
+<h2>
+      (Physical Name: Afiliacao)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Afilia&ccedil;&atilde;o. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Afiliacao (PK)</td><td class="tdTableDefinition">id_Afiliacao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome_Pai</td><td class="tdTableDefinition">nome_Pai</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome_Mae</td><td class="tdTableDefinition">nome_Mae</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Aluno
+                &nbsp;(<a href="#Aluno">FK</a>)
+              </td><td class="tdTableDefinition">id_Aluno</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor
+                &nbsp;(<a href="#Professor">FK</a>)
+              </td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Professor">Professor</a> through (id_Professor)</li>
+<li>
+<a href="#Aluno">Aluno</a> through (id_Aluno)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Aluno<a name="Aluno"></a>
+</h1>
+<h2>
+      (Physical Name: Aluno)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Aluno. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Aluno (PK)</td><td class="tdTableDefinition">id_Aluno</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Sexo
+                &nbsp;(<a href="#Sexo">FK</a>)
+              </td><td class="tdTableDefinition">id_Sexo</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Cor_Pele
+                &nbsp;(<a href="#Cor_Pele">FK</a>)
+              </td><td class="tdTableDefinition">id_Cor_Pele</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Estado_Civil
+                &nbsp;(<a href="#Estado_Civil">FK</a>)
+              </td><td class="tdTableDefinition">id_Estado_Civil</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Naturalidade
+                &nbsp;(<a href="#Naturalidade">FK</a>)
+              </td><td class="tdTableDefinition">id_Naturalidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Estado_Civil">Estado_Civil</a> through (id_Estado_Civil)</li>
+<li>
+<a href="#Sexo">Sexo</a> through (id_Sexo)</li>
+<li>
+<a href="#Naturalidade">Naturalidade</a> through (id_Naturalidade)</li>
+<li>
+<a href="#Cor_Pele">Cor_Pele</a> through (id_Cor_Pele)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Telefone">Telefone</a> referencing (id_Aluno)</li>
+<li>
+<a href="#Email">Email</a> referencing (id_Aluno)</li>
+<li>
+<a href="#Endereco">Endereco</a> referencing (id_Aluno)</li>
+<li>
+<a href="#Afiliacao">Afiliacao</a> referencing (id_Aluno)</li>
+<li>
+<a href="#Reserva">Reserva</a> referencing (id_Aluno)</li>
+<li>
+<a href="#Emprestimo">Emprestimo</a> referencing (id_Aluno)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Area_Conhecimento<a name="Area_Conhecimento"></a>
+</h1>
+<h2>
+      (Physical Name: Area_Conhecimento)
+      </h2>
+<p class="comment">Entidade Associativa onde armazena as chaves primarias de &Aacute;rea e Conhecimento. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Area_Conhecimento (PK)</td><td class="tdTableDefinition">id_Area_Conhecimento</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Area_Conhecimento_Livro">Area_Conhecimento_Livro</a> referencing (id_Area_Conhecimento)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Area_Conhecimento_Livro<a name="Area_Conhecimento_Livro"></a>
+</h1>
+<h2>
+      (Physical Name: Area_Conhecimento_Livro)
+      </h2>
+<p class="comment">Entidade Associativa onde armazena as chaves primarias de &Aacute;rea de Conhecimento e Livro. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Area_Conhecimento (PK)
+                &nbsp;(<a href="#Area_Conhecimento">FK</a>)
+              </td><td class="tdTableDefinition">id_Area_Conhecimento</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Livro (PK)
+                &nbsp;(<a href="#Livro">FK</a>)
+              </td><td class="tdTableDefinition">id_Livro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Livro">Livro</a> through (id_Livro)</li>
+<li>
+<a href="#Area_Conhecimento">Area_Conhecimento</a> through (id_Area_Conhecimento)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Autor<a name="Autor"></a>
+</h1>
+<h2>
+      (Physical Name: Autor)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Autor. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Autor (PK)</td><td class="tdTableDefinition">id_Autor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Autor_Livro">Autor_Livro</a> referencing (id_Autor)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Autor_Livro<a name="Autor_Livro"></a>
+</h1>
+<h2>
+      (Physical Name: Autor_Livro)
+      </h2>
+<p class="comment">Entidade Associativa onde armazena as chaves primarias de Autor e Livro. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Autor (PK)
+                &nbsp;(<a href="#Autor">FK</a>)
+              </td><td class="tdTableDefinition">id_Autor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Livro (PK)
+                &nbsp;(<a href="#Livro">FK</a>)
+              </td><td class="tdTableDefinition">id_Livro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Livro">Livro</a> through (id_Livro)</li>
+<li>
+<a href="#Autor">Autor</a> through (id_Autor)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Bairro<a name="Bairro"></a>
+</h1>
+<h2>
+      (Physical Name: Bairro)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Bairro. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Bairro (PK)</td><td class="tdTableDefinition">id_Bairro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Cidade
+                &nbsp;(<a href="#Cidade">FK</a>)
+              </td><td class="tdTableDefinition">id_Cidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Cidade">Cidade</a> through (id_Cidade)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Endereco">Endereco</a> referencing (id_Bairro)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Cidade<a name="Cidade"></a>
+</h1>
+<h2>
+      (Physical Name: Cidade)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Cidade. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Cidade (PK)</td><td class="tdTableDefinition">id_Cidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_UF
+                &nbsp;(<a href="#UF">FK</a>)
+              </td><td class="tdTableDefinition">id_UF</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#UF">UF</a> through (id_UF)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Bairro">Bairro</a> referencing (id_Cidade)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Cor_Pele<a name="Cor_Pele"></a>
+</h1>
+<h2>
+      (Physical Name: Cor_Pele)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es da Cor da Pele. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Cor_Pele (PK)</td><td class="tdTableDefinition">id_Cor_Pele</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Professor">Professor</a> referencing (id_Cor_Pele)</li>
+<li>
+<a href="#Aluno">Aluno</a> referencing (id_Cor_Pele)</li>
+<li>
+<a href="#Funcionario">Funcionario</a> referencing (id_Cor_Pele)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Dependente<a name="Dependente"></a>
+</h1>
+<h2>
+      (Physical Name: Dependente)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Dependente. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Dependente (PK)</td><td class="tdTableDefinition">id_Dependente</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor
+                &nbsp;(<a href="#Professor">FK</a>)
+              </td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Funcionario
+                &nbsp;(<a href="#Funcionario">FK</a>)
+              </td><td class="tdTableDefinition">id_Funcionario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Funcionario">Funcionario</a> through (id_Funcionario)</li>
+<li>
+<a href="#Professor">Professor</a> through (id_Professor)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Editora<a name="Editora"></a>
+</h1>
+<h2>
+      (Physical Name: Editora)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Editora. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Editora (PK)</td><td class="tdTableDefinition">id_Editora</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Livro">Livro</a> referencing (id_Editora)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Email<a name="Email"></a>
+</h1>
+<h2>
+      (Physical Name: Email)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Email. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Email (PK)</td><td class="tdTableDefinition">id_Email</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Aluno
+                &nbsp;(<a href="#Aluno">FK</a>)
+              </td><td class="tdTableDefinition">id_Aluno</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor
+                &nbsp;(<a href="#Professor">FK</a>)
+              </td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Funcionario
+                &nbsp;(<a href="#Funcionario">FK</a>)
+              </td><td class="tdTableDefinition">id_Funcionario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Tipo_Email
+                &nbsp;(<a href="#Tipo_Email">FK</a>)
+              </td><td class="tdTableDefinition">id_Tipo_Email</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Funcionario">Funcionario</a> through (id_Funcionario)</li>
+<li>
+<a href="#Professor">Professor</a> through (id_Professor)</li>
+<li>
+<a href="#Aluno">Aluno</a> through (id_Aluno)</li>
+<li>
+<a href="#Tipo_Email">Tipo_Email</a> through (id_Tipo_Email)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Emprestimo<a name="Emprestimo"></a>
+</h1>
+<h2>
+      (Physical Name: Emprestimo)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Empr&eacute;stimo. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Emprestimo (PK)</td><td class="tdTableDefinition">id_Emprestimo</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_Emprestimo</td><td class="tdTableDefinition">data_Emprestimo</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Aluno
+                &nbsp;(<a href="#Aluno">FK</a>)
+              </td><td class="tdTableDefinition">id_Aluno</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor
+                &nbsp;(<a href="#Professor">FK</a>)
+              </td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Funcionario
+                &nbsp;(<a href="#Funcionario">FK</a>)
+              </td><td class="tdTableDefinition">id_Funcionario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Funcionario">Funcionario</a> through (id_Funcionario)</li>
+<li>
+<a href="#Professor">Professor</a> through (id_Professor)</li>
+<li>
+<a href="#Aluno">Aluno</a> through (id_Aluno)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Livro_Emprestimo">Livro_Emprestimo</a> referencing (id_Emprestimo)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Endereco<a name="Endereco"></a>
+</h1>
+<h2>
+      (Physical Name: Endereco)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Endere&ccedil;o. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Endereco (PK)</td><td class="tdTableDefinition">id_Endereco</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">rua</td><td class="tdTableDefinition">rua</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero</td><td class="tdTableDefinition">numero</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cep</td><td class="tdTableDefinition">cep</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Aluno
+                &nbsp;(<a href="#Aluno">FK</a>)
+              </td><td class="tdTableDefinition">id_Aluno</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor
+                &nbsp;(<a href="#Professor">FK</a>)
+              </td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Funcionario
+                &nbsp;(<a href="#Funcionario">FK</a>)
+              </td><td class="tdTableDefinition">id_Funcionario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Bairro
+                &nbsp;(<a href="#Bairro">FK</a>)
+              </td><td class="tdTableDefinition">id_Bairro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Tipo_Endereco
+                &nbsp;(<a href="#Tipo_Endereco">FK</a>)
+              </td><td class="tdTableDefinition">id_Tipo_Endereco</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Funcionario">Funcionario</a> through (id_Funcionario)</li>
+<li>
+<a href="#Professor">Professor</a> through (id_Professor)</li>
+<li>
+<a href="#Aluno">Aluno</a> through (id_Aluno)</li>
+<li>
+<a href="#Bairro">Bairro</a> through (id_Bairro)</li>
+<li>
+<a href="#Tipo_Endereco">Tipo_Endereco</a> through (id_Tipo_Endereco)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Estado_Civil<a name="Estado_Civil"></a>
+</h1>
+<h2>
+      (Physical Name: Estado_Civil)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Estado Civil. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Estado_Civil (PK)</td><td class="tdTableDefinition">id_Estado_Civil</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave Prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Professor">Professor</a> referencing (id_Estado_Civil)</li>
+<li>
+<a href="#Funcionario">Funcionario</a> referencing (id_Estado_Civil)</li>
+<li>
+<a href="#Aluno">Aluno</a> referencing (id_Estado_Civil)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Funcionario<a name="Funcionario"></a>
+</h1>
+<h2>
+      (Physical Name: Funcionario)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Funcionario. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Funcionario (PK)</td><td class="tdTableDefinition">id_Funcionario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Sexo
+                &nbsp;(<a href="#Sexo">FK</a>)
+              </td><td class="tdTableDefinition">id_Sexo</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Cor_Pele
+                &nbsp;(<a href="#Cor_Pele">FK</a>)
+              </td><td class="tdTableDefinition">id_Cor_Pele</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Estado_Civil
+                &nbsp;(<a href="#Estado_Civil">FK</a>)
+              </td><td class="tdTableDefinition">id_Estado_Civil</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Naturalidade
+                &nbsp;(<a href="#Naturalidade">FK</a>)
+              </td><td class="tdTableDefinition">id_Naturalidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Estado_Civil">Estado_Civil</a> through (id_Estado_Civil)</li>
+<li>
+<a href="#Sexo">Sexo</a> through (id_Sexo)</li>
+<li>
+<a href="#Naturalidade">Naturalidade</a> through (id_Naturalidade)</li>
+<li>
+<a href="#Cor_Pele">Cor_Pele</a> through (id_Cor_Pele)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Dependente">Dependente</a> referencing (id_Funcionario)</li>
+<li>
+<a href="#Endereco">Endereco</a> referencing (id_Funcionario)</li>
+<li>
+<a href="#Telefone">Telefone</a> referencing (id_Funcionario)</li>
+<li>
+<a href="#Email">Email</a> referencing (id_Funcionario)</li>
+<li>
+<a href="#Emprestimo">Emprestimo</a> referencing (id_Funcionario)</li>
+<li>
+<a href="#Habilidade_Funcionario">Habilidade_Funcionario</a> referencing (id_Funcionario)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Habilidade<a name="Habilidade"></a>
+</h1>
+<h2>
+      (Physical Name: Habilidade)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Habilidade. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Habilidade (PK)</td><td class="tdTableDefinition">id_Habilidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Habilidade_Funcionario">Habilidade_Funcionario</a> referencing (id_Habilidade)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Habilidade_Funcionario<a name="Habilidade_Funcionario"></a>
+</h1>
+<h2>
+      (Physical Name: Habilidade_Funcionario)
+      </h2>
+<p class="comment">Entidade Associativa onde armazena as chaves primarias de Habilidade e Funcionario. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Habilidade (PK)
+                &nbsp;(<a href="#Habilidade">FK</a>)
+              </td><td class="tdTableDefinition">id_Habilidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Funcionario (PK)
+                &nbsp;(<a href="#Funcionario">FK</a>)
+              </td><td class="tdTableDefinition">id_Funcionario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Funcionario">Funcionario</a> through (id_Funcionario)</li>
+<li>
+<a href="#Habilidade">Habilidade</a> through (id_Habilidade)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Livro<a name="Livro"></a>
+</h1>
+<h2>
+      (Physical Name: Livro)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Livro. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Livro (PK)</td><td class="tdTableDefinition">id_Livro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">titulo</td><td class="tdTableDefinition">titulo</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">isbn</td><td class="tdTableDefinition">isbn</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">ano_Edicao</td><td class="tdTableDefinition">ano_Edicao</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_Pagina</td><td class="tdTableDefinition">numero_Pagina</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Editora
+                &nbsp;(<a href="#Editora">FK</a>)
+              </td><td class="tdTableDefinition">id_Editora</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Editora">Editora</a> through (id_Editora)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Livro_Emprestimo">Livro_Emprestimo</a> referencing (id_Livro)</li>
+<li>
+<a href="#Reserva_Livro">Reserva_Livro</a> referencing (id_Livro)</li>
+<li>
+<a href="#Autor_Livro">Autor_Livro</a> referencing (id_Livro)</li>
+<li>
+<a href="#Area_Conhecimento_Livro">Area_Conhecimento_Livro</a> referencing (id_Livro)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Livro_Emprestimo<a name="Livro_Emprestimo"></a>
+</h1>
+<h2>
+      (Physical Name: Livro_Emprestimo)
+      </h2>
+<p class="comment">Entidade Associativa onde armazena as chaves primarias de Livro e Emprestimo. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Livro (PK)
+                &nbsp;(<a href="#Livro">FK</a>)
+              </td><td class="tdTableDefinition">id_Livro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Emprestimo (PK)
+                &nbsp;(<a href="#Emprestimo">FK</a>)
+              </td><td class="tdTableDefinition">id_Emprestimo</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_Entrega</td><td class="tdTableDefinition">data_Entrega</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_Devolucao</td><td class="tdTableDefinition">data_Devolucao</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Livro">Livro</a> through (id_Livro)</li>
+<li>
+<a href="#Emprestimo">Emprestimo</a> through (id_Emprestimo)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Pagamento">Pagamento</a> referencing (id_Livro, id_Emprestimo)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Naturalidade<a name="Naturalidade"></a>
+</h1>
+<h2>
+      (Physical Name: Naturalidade)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Naturalidade. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Naturalidade (PK)</td><td class="tdTableDefinition">id_Naturalidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_UF
+                &nbsp;(<a href="#UF">FK</a>)
+              </td><td class="tdTableDefinition">id_UF</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#UF">UF</a> through (id_UF)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Professor">Professor</a> referencing (id_Naturalidade)</li>
+<li>
+<a href="#Funcionario">Funcionario</a> referencing (id_Naturalidade)</li>
+<li>
+<a href="#Aluno">Aluno</a> referencing (id_Naturalidade)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Pagamento<a name="Pagamento"></a>
+</h1>
+<h2>
+      (Physical Name: Pagamento)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Pagamento. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Livro (PK)
+                &nbsp;(<a href="#Livro_Emprestimo">FK</a>)
+              </td><td class="tdTableDefinition">id_Livro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Emprestimo (PK)
+                &nbsp;(<a href="#Livro_Emprestimo">FK</a>)
+              </td><td class="tdTableDefinition">id_Emprestimo</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_Pagamento</td><td class="tdTableDefinition">data_Pagamento</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valor_Atraso</td><td class="tdTableDefinition">valor_Atraso</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valor_Pago</td><td class="tdTableDefinition">valor_Pago</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">hora_Pagamento</td><td class="tdTableDefinition">hora_Pagamento</td><td class="tdTableDefinition">TIME</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Livro_Emprestimo">Livro_Emprestimo</a> through (id_Livro, id_Emprestimo)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Pais<a name="Pais"></a>
+</h1>
+<h2>
+      (Physical Name: Pais)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Pa&iacute;s. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Pais (PK)</td><td class="tdTableDefinition">id_Pais</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#UF">UF</a> referencing (id_Pais)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Professor<a name="Professor"></a>
+</h1>
+<h2>
+      (Physical Name: Professor)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Professor. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor (PK)</td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave Prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">carga_Horaria</td><td class="tdTableDefinition">carga_Horaria</td><td class="tdTableDefinition">TIME</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Sexo
+                &nbsp;(<a href="#Sexo">FK</a>)
+              </td><td class="tdTableDefinition">id_Sexo</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Cor_Pele
+                &nbsp;(<a href="#Cor_Pele">FK</a>)
+              </td><td class="tdTableDefinition">id_Cor_Pele</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Estado_Civil
+                &nbsp;(<a href="#Estado_Civil">FK</a>)
+              </td><td class="tdTableDefinition">id_Estado_Civil</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Naturalidade
+                &nbsp;(<a href="#Naturalidade">FK</a>)
+              </td><td class="tdTableDefinition">id_Naturalidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Estado_Civil">Estado_Civil</a> through (id_Estado_Civil)</li>
+<li>
+<a href="#Sexo">Sexo</a> through (id_Sexo)</li>
+<li>
+<a href="#Naturalidade">Naturalidade</a> through (id_Naturalidade)</li>
+<li>
+<a href="#Cor_Pele">Cor_Pele</a> through (id_Cor_Pele)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Email">Email</a> referencing (id_Professor)</li>
+<li>
+<a href="#Telefone">Telefone</a> referencing (id_Professor)</li>
+<li>
+<a href="#Endereco">Endereco</a> referencing (id_Professor)</li>
+<li>
+<a href="#Emprestimo">Emprestimo</a> referencing (id_Professor)</li>
+<li>
+<a href="#Reserva">Reserva</a> referencing (id_Professor)</li>
+<li>
+<a href="#Afiliacao">Afiliacao</a> referencing (id_Professor)</li>
+<li>
+<a href="#Dependente">Dependente</a> referencing (id_Professor)</li>
+<li>
+<a href="#Professor_Titulacao">Professor_Titulacao</a> referencing (id_Professor)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Professor_Titulacao<a name="Professor_Titulacao"></a>
+</h1>
+<h2>
+      (Physical Name: Professor_Titulacao)
+      </h2>
+<p class="comment">Entidade Associativa onde armazena as chaves primarias de Professor e Titula&ccedil;&atilde;o. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Titulacao (PK)
+                &nbsp;(<a href="#Titulacao">FK</a>)
+              </td><td class="tdTableDefinition">id_Titulacao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor (PK)
+                &nbsp;(<a href="#Professor">FK</a>)
+              </td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave Prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">ano</td><td class="tdTableDefinition">ano</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Professor">Professor</a> through (id_Professor)</li>
+<li>
+<a href="#Titulacao">Titulacao</a> through (id_Titulacao)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Reserva<a name="Reserva"></a>
+</h1>
+<h2>
+      (Physical Name: Reserva)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Reserva. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Reserva (PK)</td><td class="tdTableDefinition">id_Reserva</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_Reserva</td><td class="tdTableDefinition">data_Reserva</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Aluno
+                &nbsp;(<a href="#Aluno">FK</a>)
+              </td><td class="tdTableDefinition">id_Aluno</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor
+                &nbsp;(<a href="#Professor">FK</a>)
+              </td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Professor">Professor</a> through (id_Professor)</li>
+<li>
+<a href="#Aluno">Aluno</a> through (id_Aluno)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Reserva_Livro">Reserva_Livro</a> referencing (id_Reserva)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Reserva_Livro<a name="Reserva_Livro"></a>
+</h1>
+<h2>
+      (Physical Name: Reserva_Livro)
+      </h2>
+<p class="comment">Entidade Associativa onde armazena as chaves primarias de Reserva e Livro. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Livro (PK)
+                &nbsp;(<a href="#Livro">FK</a>)
+              </td><td class="tdTableDefinition">id_Livro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Reserva (PK)
+                &nbsp;(<a href="#Reserva">FK</a>)
+              </td><td class="tdTableDefinition">id_Reserva</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Livro">Livro</a> through (id_Livro)</li>
+<li>
+<a href="#Reserva">Reserva</a> through (id_Reserva)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Sexo<a name="Sexo"></a>
+</h1>
+<h2>
+      (Physical Name: Sexo)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Sexo. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Sexo (PK)</td><td class="tdTableDefinition">id_Sexo</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(10)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Professor">Professor</a> referencing (id_Sexo)</li>
+<li>
+<a href="#Funcionario">Funcionario</a> referencing (id_Sexo)</li>
+<li>
+<a href="#Aluno">Aluno</a> referencing (id_Sexo)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Telefone<a name="Telefone"></a>
+</h1>
+<h2>
+      (Physical Name: Telefone)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Telefone. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Telefone (PK)</td><td class="tdTableDefinition">id_Telefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">ddd</td><td class="tdTableDefinition">ddd</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero</td><td class="tdTableDefinition">numero</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Aluno
+                &nbsp;(<a href="#Aluno">FK</a>)
+              </td><td class="tdTableDefinition">id_Aluno</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Professor
+                &nbsp;(<a href="#Professor">FK</a>)
+              </td><td class="tdTableDefinition">id_Professor</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Funcionario
+                &nbsp;(<a href="#Funcionario">FK</a>)
+              </td><td class="tdTableDefinition">id_Funcionario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Tipo_Telefone
+                &nbsp;(<a href="#Tipo_Telefone">FK</a>)
+              </td><td class="tdTableDefinition">id_Tipo_Telefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Funcionario">Funcionario</a> through (id_Funcionario)</li>
+<li>
+<a href="#Professor">Professor</a> through (id_Professor)</li>
+<li>
+<a href="#Aluno">Aluno</a> through (id_Aluno)</li>
+<li>
+<a href="#Tipo_Telefone">Tipo_Telefone</a> through (id_Tipo_Telefone)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Tipo_Email<a name="Tipo_Email"></a>
+</h1>
+<h2>
+      (Physical Name: Tipo_Email)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Tipo de Email. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Tipo_Email (PK)</td><td class="tdTableDefinition">id_Tipo_Email</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Email">Email</a> referencing (id_Tipo_Email)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Tipo_Endereco<a name="Tipo_Endereco"></a>
+</h1>
+<h2>
+      (Physical Name: Tipo_Endereco)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Tipo de Endere&ccedil;o. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Tipo_Endereco (PK)</td><td class="tdTableDefinition">id_Tipo_Endereco</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Endereco">Endereco</a> referencing (id_Tipo_Endereco)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Tipo_Telefone<a name="Tipo_Telefone"></a>
+</h1>
+<h2>
+      (Physical Name: Tipo_Telefone)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de Tipo de Telefone. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Tipo_Telefone (PK)</td><td class="tdTableDefinition">id_Tipo_Telefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Telefone">Telefone</a> referencing (id_Tipo_Telefone)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Titulacao<a name="Titulacao"></a>
+</h1>
+<h2>
+      (Physical Name: Titulacao)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es do Titula&ccedil;&atilde;o de Professor. Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Titulacao (PK)</td><td class="tdTableDefinition">id_Titulacao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Professor_Titulacao">Professor_Titulacao</a> referencing (id_Titulacao)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>UF<a name="UF"></a>
+</h1>
+<h2>
+      (Physical Name: UF)
+      </h2>
+<p class="comment">Entidade onde armazena as informa&ccedil;&otilde;es de UF (Unidade da Federa&ccedil;&atilde;o). Seus atributos:</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_UF (PK)</td><td class="tdTableDefinition">id_UF</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave prim&aacute;ria da entidade.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">sigla</td><td class="tdTableDefinition">sigla</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">descricao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_Pais
+                &nbsp;(<a href="#Pais">FK</a>)
+              </td><td class="tdTableDefinition">id_Pais</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Chave estrangeira da entidade.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#Pais">Pais</a> through (id_Pais)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#Cidade">Cidade</a> referencing (id_UF)</li>
+<li>
+<a href="#Naturalidade">Naturalidade</a> referencing (id_UF)</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
